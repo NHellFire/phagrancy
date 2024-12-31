@@ -1,24 +1,14 @@
 version: '3'
 
 services:
-  nginx:
-    image: phagrancy-nginx:latest
-    container_name: phagrancy-nginx
-    ports:
-      - "80:80"
-      - "443:443"
-    networks:
-      phagrancy:
-
-  php-fpm:
-    image: phagrancy-php-fpm:latest
-    container_name: phagrancy-php-fpm
-    volumes:
-      - "./.env_phagrancy:/srv/phagrancy/.env"
-      - "./boxes:/srv/phagrancy/boxes"
-    networks:
-      phagrancy:
-
-networks:
   phagrancy:
-    driver: bridge
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: phagrancy
+    env_file: .env
+    ports:
+      - "80:8080"
+#      - "443:8443"
+    volumes:
+      - "./boxes:/var/www/html/boxes"
