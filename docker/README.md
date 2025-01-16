@@ -11,7 +11,9 @@ One container with nginx and php-fpm is used.
 
 See `.env.sample` and docs [wiki/.env-Configuration-File](https://github.com/dlundgren/phagrancy/wiki/.env-Configuration-File).
 
-It is supposed that `storage_path=boxes`, this path will be mounted into
+**Note:** Variable names are uppercase for docker.
+
+It is supposed that `STORAGE_PATH=boxes`, this path will be mounted into
 the phagrancy docker container. See [docker-compose.yml](docker-compose.yml).
 
 php-fpm is running with user:group `www-data:www-data` (`33:33`).
