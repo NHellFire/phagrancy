@@ -19,6 +19,12 @@ jobs:
   build-and-push-image:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        architecture:
+          - amd64
+          - arm64
+
     needs:
       - tests
 
@@ -60,6 +66,7 @@ jobs:
           context: .
           file: docker/Dockerfile
           push: true
+          platforms: linux/${{ matrix.architecture }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
