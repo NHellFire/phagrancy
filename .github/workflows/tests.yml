@@ -60,6 +60,8 @@ jobs:
         run: |
           packer plugins install github.com/hashicorp/vagrant
           composer ci-test
+        env:
+          PACKER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Code Climate Coverage Action Test
         uses: MartinNuc/codeclimate-action@1
