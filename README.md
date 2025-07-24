@@ -1,6 +1,6 @@
 # Private Vagrant Box Hosting
 
-![Tests](https://github.com/NHellFire/phagrancy/actions/workflows/ci.yml/badge.svg?event=push) [![Code Climate](https://codeclimate.com/github/NHellFire/phagrancy/badges/gpa.svg)](https://codeclimate.com/github/NHellFire/phagrancy)
+![Tests](https://github.com/NHellFire/phagrancy/actions/workflows/ci.yml/badge.svg?event=push) [![Code Coverage](https://qlty.sh/gh/NHellFire/projects/phagrancy/coverage.svg)](https://qlty.sh/gh/NHellFire/projects/phagrancy)
 
 Phagrancy implements a self-hosted subset of Vagrant Cloud. It allows you to build images in Packer, publish them and then share the images with your co-workers via Vagrant, all on-premise.
 
